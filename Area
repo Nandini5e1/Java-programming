@@ -1,0 +1,38 @@
+# Java-programming
+import java.io.*;
+import java.util.*;
+abstract  class  Shape{
+	int  a=4,  b=8;
+	abstract  public  void  printArea();
+}
+class  Rectangle  extends  Shape{
+	public  int  areaOfRectangle;
+	public  void  printArea(){
+		areaOfRectangle=a*b;
+		System.out.println("  area  of  Rectangle :  "+areaOfRectangle);
+	}
+}
+class Triangle  extends   Shape{
+	int   areaOfTriangle;
+	public  void  printArea(){
+		areaOfTriangle=(int)(0.5*a*b);
+		System.out.println("  area   of   Triangle  : "+areaOfTriangle);
+	}
+}
+class  Circle  extends  Shape{
+	int   areaOfCircle;
+	public  void  printArea(){
+		areaOfCircle=(int)(3.14*a*a);
+		System.out.println("  area  of   Circle  : "+areaOfCircle);
+	}
+}
+public  class   Demo{
+	public   static  void  main(String  args[]){
+		Rectangle  x=new  Rectangle();
+		x.printArea();
+		Triangle   y=new   Triangle();
+		y.printArea();
+		Circle   z=new   Circle();
+		z.printArea();
+	}
+}
