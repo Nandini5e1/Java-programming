@@ -1,0 +1,35 @@
+# Java-programming
+import java.io.*;
+import  java.util.*;
+import  java.util.regex.*;
+class  RegularExpression{
+	private  String  username;
+	
+	public  RegularExpression(){
+	}
+	public  RegularExpression(String  username){
+		this.username=username;
+		
+	}
+	public   void  validusername(){
+		String  regex="[a-zA-Z]+";
+		if(username.matches(regex)){
+			System.out.println("valid  user  name");
+		}
+		else{
+			System.out.println("invalid  user  name");
+		}
+	}
+	
+}
+public  class  Information{
+	public  static  void  main(String  args[]){
+		Scanner  sc=new  Scanner(System.in);
+		System.out.println("Enter  user  name : ");
+		String  Username=sc.next();
+		
+		RegularExpression  obj=new  RegularExpression(Username);
+		obj.validusername();
+		
+	}
+}
