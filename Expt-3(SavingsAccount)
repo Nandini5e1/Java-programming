@@ -1,0 +1,50 @@
+import java.io.*;
+class SavingsAccount
+{
+    static double interest;
+    private double savings;
+
+    public SavingsAccount(double balance)
+    {
+        savings = balance;
+    }
+
+    public double calculateMonthlyInterest()
+    {
+        return (savings*interest)/12;
+    }
+
+    public static void modifyInterestRate(double rate)
+    {
+        interest = rate;
+    }
+
+
+    public static double getinterest(){
+        return interest;
+        
+    }
+
+    public double getsavings(){
+        return savings;
+        
+    }
+
+}
+
+public class MainSavings
+{
+    public static void main(String args[])
+    {
+        SavingsAccount saver1 = new SavingsAccount(5000.0);
+        SavingsAccount saver2 = new SavingsAccount(5000.0);
+
+        SavingsAccount.modifyInterestRate(4);
+
+        System.out.printf("Balance for Saver1 = %.2f\nBalance (with itr) for Saver1 = %.2f\nInterest Rate = %.2f\n\n",saver1.getsavings(),saver1.getsavings()+saver1.calculateMonthlyInterest(),SavingsAccount.getinterest());
+
+        SavingsAccount.modifyInterestRate(5);
+
+        System.out.printf("Balance for Saver2 = %.2f\nBalance (with itr) for Saver2 = %.2f\nInterest Rate = %.2f\n\n",saver2.getsavings(),saver2.getsavings()+saver2.calculateMonthlyInterest(),SavingsAccount.getinterest());
+    }
+}
