@@ -1,0 +1,37 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class MainArithmeticExpression
+{
+    public static int result(int nume,int deno)
+    throws ArithmeticException
+    {
+        return nume/deno;
+    }
+    
+	public static void main(String[] args) 
+	{
+	    Scanner scanner=new Scanner(System.in);
+	     try 
+	        {
+	            System.out.print("enter a numerator:");
+	            int nume=scanner.nextInt();
+	            System.out.print("enter a denominator:");
+	            int deno=scanner.nextInt();
+	            int finalresult=result(nume,deno);
+	            System.out.printf("result is %s",finalresult);
+	        }
+	    catch(InputMismatchException Exception)
+	       { 
+	         System.out.printf("Exception : %s",Exception);
+	         scanner.nextLine();
+	         System.out.println("please enter integers only ");
+	       }
+	   catch(ArithmeticException aException)
+	      {
+	          System.out.printf("Exception  %s:",aException);
+	          System.out.println("zero cannot be taken as denominator");
+	      }
+		
+	}
+}
